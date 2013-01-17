@@ -1,0 +1,4 @@
+<Files *.vcf>
+  ForceType text/x-vcard
+  Header set Content-Disposition attachment
+</Files>
