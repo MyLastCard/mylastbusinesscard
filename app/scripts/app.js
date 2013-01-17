@@ -2,12 +2,14 @@
 $(document).ready(function() {
     
   // accordion
-  $("section.open article").slideDown();
+  $("section.open article").css('display', 'block');
   $("section.accordion h1").click(function(e){
     var $section = $(this).parent('.accordion');
     if (!$section.hasClass('open')) {
       $(".accordion.open").removeClass('open').find("article").slideUp();
       $(this).parent('section').addClass('open').find("article").slideDown();      
+    } else {
+      $(".accordion.open").removeClass('open').find("article").slideUp();
     }
   });
   

@@ -104,8 +104,8 @@ button {width: auto; overflow: visible;}
 /* we like off-black for text */
 body, select, input, textarea {color: #333;}
 
-a {color: #03f;}
-a:hover {color: #69f;}
+a {color: inherit; text-decoration:underline}
+a:hover {color: #69f; text-decoration:none}
 
 /* Custom text-selection colors (remove any text shadows: twitter.com/miketaylr/status/12228805301) */
 ::-moz-selection{background: inherit; color: inherit; text-shadow: none;}
@@ -151,6 +151,7 @@ a.googleplus-icon {background-position:0 -328px}
 a.twitter-icon {background-position:0 -364px}
 a.instagram-icon {background-position:0 -400px}
 a.myspace-icon {background-position:0 -436px}
+a.website-icon {background-position:0 -472px}
 
 
 /*************************
@@ -188,9 +189,9 @@ body {
   text-align:center;
   clear:both;
   font-weight:normal;
-  font-size:12px;
+  font-size:14px;
   font-family:arial, sans-serif;
-  color:#333;
+  color:#222;
 }
 
 .icon-group {
@@ -240,6 +241,10 @@ body {
   background-color:#eee;
   font-size:14px;
   font-weight:normal;
+}
+
+#profile-picture a {
+  text-decoration:none;
 }
 
 /*************************
@@ -316,25 +321,32 @@ body {
 .content h3,
 .content h4,
 .content h5 {
-  color:#111;
+  padding:15px 15px 0 15px;
+  color:#333;
 }
 
 .content img {
   margin:0 auto;
 }
 
-.content p {
+.content p,
+.content ul {
   padding:15px 15px 0 15px;
-  font-size:15px;
+  font-size:14px;
   color:#444;
-  font-style:italic;
   line-height:135%;
+}
+
+.content li {
+  list-style-type:circle;
+  margin-left:25px;
+  color:#555;
+  padding-bottom:5px;
 }
 
 .content h4 {
   padding:10px 15px;
   font-size:16px;
-  color:#222;
   line-height:135%;
 }
 
@@ -342,13 +354,17 @@ body {
   margin:0 15px;
 }
 
-.content input.text {
+.content input.text, 
+.content textarea {
   display:block;
   width:95%;
   padding:5px;
   font-size:18px;
-  height:30px;
   margin:5px 0 0 0;
+  border:1px solid #eee;
+  border-radius:none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .content input.submit{
